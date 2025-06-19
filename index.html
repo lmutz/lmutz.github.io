@@ -3,65 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luke Mutz | Home</title>
+  <title>Home | Luke Mutz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
-    }
-    header {
-      background-color: #002b45;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
+      background-color: #f5f7fa;
+      color: #1f1f1f;
     }
     nav {
       display: flex;
-      justify-content: center;
-      background-color: #004a70;
+      align-items: center;
+      background-color: #5a6778;
+      padding: 0.5rem 2rem;
+      gap: 1rem;
+    }
+    .nav-name {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: #ffffff;
+      margin-right: 2rem;
     }
     nav a {
-      color: #fff;
-      padding: 1rem;
+      color: #ffffff;
+      background-color: transparent;
+      border: 1px solid #c0c6d0;
+      padding: 0.5rem 1rem;
       text-decoration: none;
-      transition: background 0.3s;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: background 0.3s, color 0.3s;
     }
     nav a:hover {
-      background-color: #006699;
+      background-color: #76869b;
+      color: #ffffff;
+    }
+    .page-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #3f4a5a;
+      text-align: left;
+      margin: 2rem 2rem 1rem;
+      position: relative;
+      width: fit-content;
+    }
+    .page-title::after {
+      content: '';
+      display: block;
+      height: 2px;
+      background: linear-gradient(to right, transparent, #3f4a5a, transparent);
+      margin-top: 0.5rem;
     }
     .container {
       max-width: 800px;
       margin: auto;
       padding: 2rem;
-      background: white;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
       text-align: center;
     }
     footer {
       text-align: center;
       padding: 1rem;
-      background-color: #002b45;
+      background-color: #3f4a5a;
       color: white;
       margin-top: 2rem;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Luke Mutz</h1>
-    <p>Data Scientist | Clean Energy | Machine Learning</p>
-  </header>
-
   <nav>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="resume.html">Resume</a>
+    <div class="nav-name">Luke Mutz</div>
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">🚶‍♂️ About</a>
+    <a href="projects.html">📊 Projects</a>
+    <a href="resume.html">📝 Resume</a>
   </nav>
 
+  <div class="page-title">🏠 Home</div>
+
   <div class="container">
-    <h2>Welcome to My Website</h2>
-    <p>This site showcases my background, projects, and resume. Use the tabs above to explore!</p>
+    <p>Welcome to my personal website! You can explore my background, projects, and resume using the navigation above.</p>
   </div>
 
   <footer>
