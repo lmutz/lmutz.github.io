@@ -15,10 +15,16 @@
     }
     nav {
       display: flex;
-      justify-content: flex-start;
+      align-items: center;
       background-color: #5a6778;
       padding: 0.5rem 2rem;
       gap: 1rem;
+    }
+    .nav-name {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: #ffffff;
+      margin-right: 2rem;
     }
     nav a {
       color: #ffffff;
@@ -38,8 +44,8 @@
       font-size: 1.75rem;
       font-weight: 600;
       color: #3f4a5a;
-      text-align: center;
-      margin: 2rem auto 1rem;
+      text-align: left;
+      margin: 2rem 2rem 1rem;
       position: relative;
       width: fit-content;
     }
@@ -88,12 +94,14 @@
 </head>
 <body>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
+    <div class="nav-name">Luke Mutz</div>
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">🚶‍♂️ About</a>
+    <a href="projects.html">📊 Projects</a>
+    <a href="resume.html">📝 Resume</a>
   </nav>
 
-  <div class="page-title">Resume</div>
+  <div class="page-title">📝 Resume</div>
 
   <div class="container">
     <p>You can view or download my resume using the button below.</p>
@@ -106,4 +114,3 @@
   </footer>
 </body>
 </html>
-
