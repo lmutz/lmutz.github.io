@@ -13,12 +13,6 @@
       background-color: #f5f7fa;
       color: #1f1f1f;
     }
-    header {
-      background-color: #3f4a5a;
-      color: #fff;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
     nav {
       display: flex;
       justify-content: flex-start;
@@ -40,10 +34,26 @@
       background-color: #76869b;
       color: #ffffff;
     }
+    .page-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #3f4a5a;
+      text-align: center;
+      margin: 2rem auto 1rem;
+      position: relative;
+      width: fit-content;
+    }
+    .page-title::after {
+      content: '';
+      display: block;
+      height: 2px;
+      background: linear-gradient(to right, transparent, #3f4a5a, transparent);
+      margin-top: 0.5rem;
+    }
     .container {
       max-width: 800px;
       margin: auto;
-      padding: 3rem 2rem;
+      padding: 2rem;
       background: #ffffff;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
@@ -77,15 +87,13 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Resume</h1>
-  </header>
-
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="projects.html">Projects</a>
   </nav>
+
+  <div class="page-title">Resume</div>
 
   <div class="container">
     <p>You can view or download my resume using the button below.</p>
@@ -98,3 +106,4 @@
   </footer>
 </body>
 </html>
+
