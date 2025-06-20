@@ -58,22 +58,24 @@
       margin-top: 0.5rem;
     }
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
       padding: 2rem;
       background: #ffffff;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-      text-align: center;
+      text-align: left;
     }
-    h2 {
-      color: #3f4a5a;
-      margin-bottom: 1rem;
+    iframe {
+      width: 100%;
+      height: 1000px;
+      border: none;
+      margin-top: 1.5rem;
     }
     a.button {
       display: inline-block;
       padding: 0.75rem 1.5rem;
-      margin-top: 1.5rem;
+      margin-top: 1rem;
       background-color: #3f4a5a;
       color: #ffffff;
       text-decoration: none;
@@ -117,10 +119,12 @@
   <div class="page-title">📝 Resume</div>
 
   <div class="container">
-    <p>I'll obviously include a link to my resume PDF, but I think I'll also post it directly on here as well or find a way
-    to write it all out in plain-text better fit for the website.</p>
-    <a class="button" href="resume.pdf" target="_blank">Download Resume (PDF)</a>
-    <p>Or check out my <a href="https://www.linkedin.com/in/YOUR-LINK" target="_blank">LinkedIn profile</a>.</p>
+    <p>View or download my most recent resume using the options below.</p>
+    <a class="button" href="Luke Mutz Resume - 06_20_2025.pdf" download>Download Resume (PDF)</a>
+
+    <iframe src="Luke Mutz Resume - 06_20_2025.pdf"></iframe>
+
+    <p>If the embedded version doesn't load, you can also <a href="Luke Mutz Resume - 06_20_2025.pdf" target="_blank">view it here</a>.</p>
   </div>
 
   <footer>
@@ -128,7 +132,7 @@
       <a href="mailto:luke.mutz@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
       <a href="https://www.linkedin.com/in/luke-mutz-7290592a8" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
       <a href="https://github.com/lmutz/SP15-Solar-Gen/blob/main/SP15SolarGenProj.ipynb" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-    </div> 
+    </div>
     <p>© 2025 Luke Mutz. All rights reserved.</p>
   </footer>
 </body>
