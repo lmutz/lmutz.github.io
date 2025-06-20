@@ -66,6 +66,42 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
       text-align: left;
     }
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .book-item {
+      text-align: center;
+    }
+    .book-cover {
+      width: 100%;
+      max-width: 150px;
+      height: auto;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    .quote {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+    .book-title {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #1f1f1f;
+    }
+    .current-reading {
+      font-size: 0.8rem;
+      background-color: #dee3ea;
+      color: #3f4a5a;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
     footer {
       text-align: center;
       padding: 1.5rem 1rem 2rem;
@@ -84,30 +120,6 @@
     }
     .footer-icons a:hover {
       opacity: 0.8;
-    }
-
-    /* Book section styles */
-    .book-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-    .book-item {
-      text-align: center;
-    }
-    .book-cover {
-      width: 100%;
-      max-width: 140px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
-    }
-    .quote {
-      font-size: 0.9rem;
-      margin-top: 0.5rem;
-      font-style: italic;
-      color: #444;
     }
   </style>
 </head>
@@ -133,24 +145,27 @@
     sticks, and these days I find myself on the golf course more than my wallet would like. Pickup basketball and padel are other favorites
     of mine, and I'm planning on doing the 75 mile 'Bike MS: City to Shore' bike ride this fall.
     </p>
-
     <p><strong>Books</strong><br>Here are a few books I've been enjoying recently, along with quotes that stuck with me.</p>
-
     <div class="book-grid">
       <div class="book-item">
+        <div class="current-reading">📖 Currently Reading</div>
         <img src="lonesomedove.jpg" alt="Current Read" class="book-cover">
+        <p class="book-title"><strong>Lonesome Dove</strong><br><em>by Larry McMurtry</em></p>
         <p class="quote">“A man who dares to waste one hour of time has not discovered the value of life.”</p>
       </div>
       <div class="book-item">
         <img src="brotherskaramazov.jpg" alt="Book 1" class="book-cover">
+        <p class="book-title"><strong>The Brothers Karamazov</strong><br><em>by Fyodor Dostoyevsky</em></p>
         <p class="quote">“The first principle is that you must not fool yourself—and you are the easiest person to fool.”</p>
       </div>
       <div class="book-item">
         <img src="twocities.jpg" alt="Book 2" class="book-cover">
+        <p class="book-title"><strong>A Tale of Two Cities</strong><br><em>by Charles Dickens</em></p>
         <p class="quote">“In the beginner’s mind there are many possibilities, in the expert’s mind there are few.”</p>
       </div>
       <div class="book-item">
         <img src="stoner.jpg" alt="Book 3" class="book-cover">
+        <p class="book-title"><strong>Stoner</strong><br><em>by John Williams</em></p>
         <p class="quote">“It is not length of life, but depth of life.”</p>
       </div>
     </div>
@@ -166,5 +181,4 @@
   </footer>
 </body>
 </html>
-
 
