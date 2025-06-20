@@ -85,6 +85,30 @@
     .footer-icons a:hover {
       opacity: 0.8;
     }
+
+    /* Book section styles */
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .book-item {
+      text-align: center;
+    }
+    .book-cover {
+      width: 100%;
+      max-width: 140px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+    }
+    .quote {
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      font-style: italic;
+      color: #444;
+    }
   </style>
 </head>
 <body>
@@ -105,11 +129,31 @@
     one was right at home in Swarthmore. Our field had a beautiful new dorm built into the left field wall, complete with a big porch 
     where students could watch the games, which made playing there a ton of fun. Check it out!<br>
     <img src="ballfield.jpg" alt="Swarthmore Baseball Field" style="max-width: 100%; border: 1px solid #ccc; border-radius: 4px; margin-top: 10px;">
-    <br> I’ve followed the natural progression of many former collegiate baseball players who still enjoy hitting round objects with 
+    <br> Since graduating, I’ve followed the natural progression of many former collegiate baseball players who still enjoy hitting round objects with 
     sticks, and these days I find myself on the golf course more than my wallet would like. Pickup basketball and padel are other favorites
     of mine, and I'm planning on doing the 75 mile 'Bike MS: City to Shore' bike ride this fall.
     </p>
-    <p><strong>Books</strong><br></p>
+
+    <p><strong>Books</strong><br>Here are a few books I've been enjoying recently, along with quotes that stuck with me.</p>
+
+    <div class="book-grid">
+      <div class="book-item">
+        <img src="lonesomedove.jpg" alt="Current Read" class="book-cover">
+        <p class="quote">“A man who dares to waste one hour of time has not discovered the value of life.”</p>
+      </div>
+      <div class="book-item">
+        <img src="brotherskaramazov.jpg" alt="Book 1" class="book-cover">
+        <p class="quote">“The first principle is that you must not fool yourself—and you are the easiest person to fool.”</p>
+      </div>
+      <div class="book-item">
+        <img src="twocities.jpg" alt="Book 2" class="book-cover">
+        <p class="quote">“In the beginner’s mind there are many possibilities, in the expert’s mind there are few.”</p>
+      </div>
+      <div class="book-item">
+        <img src="stoner.jpg" alt="Book 3" class="book-cover">
+        <p class="quote">“It is not length of life, but depth of life.”</p>
+      </div>
+    </div>
   </div>
 
   <footer>
