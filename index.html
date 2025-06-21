@@ -80,6 +80,16 @@
     .section-header {
       font-size: 1.2rem;
     }
+    .gif-container {
+      text-align: center;
+      margin: 2rem 0 1rem;
+    }
+    .gif-container img {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
     footer {
       text-align: center;
       padding: 1.5rem 1rem 2rem;
@@ -100,8 +110,6 @@
       opacity: 0.8;
     }
   </style>
-  <!-- Font Awesome Kit -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <nav>
@@ -114,7 +122,6 @@
 
   <div class="page-title">🏠 Home</div>
 
-  <!-- Intro section with circular image and aligned text -->
   <div class="intro-section">
     <img class="profile-pic" src="home-photo.jpg" alt="Profile Picture">
     <div class="container">
@@ -125,7 +132,13 @@
       I’ve had the chance to work with all kinds of data, from genomics and economics to baseball stats and weather-driven energy 
       modeling. Though my interests are broad, I’ve recently been drawn to exploring how machine learning and predictive analytics can 
       help accelerate the decarbonization of the electric grid. If you share any of these interests and want to connect, 
-      feel free to reach out through any of the links at the bottom of this page! </p>
+      feel free to reach out through any of the links at the bottom of this page!</p>
+
+      <!-- Embedded GIF -->
+      <div class="gif-container">
+        <img src="cartdoc.gif" alt="Cartoon Dog on Distribution GIF">
+      </div>
+
       <p><strong class="section-header">Contact</strong><br>
       Email: Luke.mutz@gmail.com<br>
       LinkedIn: <a href="https://www.linkedin.com/in/luke-mutz-7290592a8" target="_blank">https://www.linkedin.com/in/luke-mutz-7290592a8</a>
@@ -143,4 +156,5 @@
   </footer>
 </body>
 </html>
+
 
