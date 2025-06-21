@@ -80,15 +80,22 @@
     .section-header {
       font-size: 1.2rem;
     }
+    /* New styles to remove extra whitespace around the gif */
     .gif-container {
       text-align: center;
-      margin: 2rem 0 1rem;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0;
+      line-height: 0;
     }
     .gif-container img {
-      width: 100%;
+      width: auto;
       max-width: 100%;
       border-radius: 8px;
       border: 1px solid #ccc;
+      display: block;
+      margin: 0 auto;
+      padding: 0;
     }
     footer {
       text-align: center;
@@ -110,6 +117,8 @@
       opacity: 0.8;
     }
   </style>
+  <!-- Font Awesome Kit -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <nav>
@@ -122,21 +131,22 @@
 
   <div class="page-title">🏠 Home</div>
 
+  <!-- Intro section with circular image and aligned text -->
   <div class="intro-section">
     <img class="profile-pic" src="home-photo.jpg" alt="Profile Picture">
     <div class="container">
       <p><strong class="section-header">Introduction</strong><br>Hey there 👋🏼, welcome to my personal website! Enjoy learning a bit about my academic, professional, and personal interests, 
-      and thanks for stopping by.<br> <br>My name is Luke Mutz and I'm a data scientist based in the greater
+      and thanks for stopping by.<br><br>My name is Luke Mutz and I'm a data scientist based in the greater
       Philadelphia area. I have my M.S. in Applied Statistics and Data Science from Villanova University (2024), and a double major 
       in Economics and Biology from Swarthmore College (2022). Across my academic studies, professional experience, and personal projects,
       I’ve had the chance to work with all kinds of data, from genomics and economics to baseball stats and weather-driven energy 
       modeling. Though my interests are broad, I’ve recently been drawn to exploring how machine learning and predictive analytics can 
       help accelerate the decarbonization of the electric grid. If you share any of these interests and want to connect, 
-      feel free to reach out through any of the links at the bottom of this page!</p>
+      feel free to reach out through any of the links at the bottom of this page! </p>
 
-      <!-- Embedded GIF -->
+      <!-- Gif container with no extra whitespace -->
       <div class="gif-container">
-        <img src="cartdoc.gif" alt="Cartoon Dog on Distribution GIF">
+        <img src="cartdoc.gif" alt="Cartoon dog with normal distribution speech bubble">
       </div>
 
       <p><strong class="section-header">Contact</strong><br>
