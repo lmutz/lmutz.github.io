@@ -195,10 +195,18 @@
       the entire SP15 region and were downloaded using CAISO’s OASIS API, found <a href="https://oasis.caiso.com/mrioasis/logon.do" target="_blank">here</a>.</p>
     </div>
 
-    <p class="section-header">Data Handling & Feature Engineering</p>
-    <p>I engineered features such as lagged values of past actual and forecasted generation, time-of-day and seasonal indicators, and statistical summaries of nearby grid point forecasts. These helped the model capture cyclical trends and spatial variation within the SP15 region.</p>
+    <p class="section-header">Data Handling & EDA</p>
+    <p>To incorporate the three geographically significant locations that are seen in the second figure of the Intro. section, I used 
+    the latitude and longitude of each of the three centroid centers to compute the euclidian distance with every gridpoint used in the 
+    HRRR weather dataset. The single gridpoint with the smallest distance was kept for each of the three cluster centers so that three 
+    locations could be used for every hourly forecast. After performing UTC -> PT conversions for hourly timestamps, I merged the 
+    actual and predicted solar generation dataset on the the HRRR dataset. A comprehensive demonstration of this process is detailed 
+    in the full GitHub repo, which also shows how I dealt with API pulls, API throttling, repetetive timestamps, and more. 
+    <p>While this process took place over the course of the entire project, overnight values were eventually omitted from the dataset 
+    entirely. As one might expect, overnight solar generation was largely 0 for both actual and predicted values. However, there were just 
+    enough negative and otherwise nonzero values during these hours to create a real learn-by-doing scenario. CONTINUE HERE </p></p>
 
-    <p class="section-header">Modeling</p>
+    <p class="section-header">Feature Engineering & Modeling</p>
     <p>I trained and tuned multiple models including XGBoost and Random Forest regressors, using time-series cross-validation to preserve temporal integrity. XGBoost consistently outperformed the other models in terms of RMSE and MAE. Key predictive features included solar radiation proxies, time-of-day, and prior-day generation values.</p>
 
     <img class="project-img" src="sp15-sample-plot.jpg" alt="Forecast vs Actual MW Plot">
