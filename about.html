@@ -66,29 +66,29 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
       text-align: left;
     }
-    .book-grid {
+    .book-grid, .album-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 2rem;
       margin-top: 1rem;
     }
-    .book-item {
+    .book-item, .album-item {
       text-align: center;
     }
-    .book-cover {
+    .book-cover, .album-cover {
       width: 100%;
       max-width: 150px;
       height: auto;
       border-radius: 4px;
       border: 1px solid #ccc;
     }
-    .quote {
+    .quote, .song-list {
       font-size: 0.9rem;
       font-style: italic;
       color: #666;
       margin-top: 0.5rem;
     }
-    .book-title {
+    .book-title, .album-title {
       margin-top: 0.5rem;
       font-size: 0.95rem;
       color: #1f1f1f;
@@ -199,6 +199,29 @@
 
     <p><strong class="section-header">Music</strong><br>Here's a list of some tunes I've been listening to lately, and a link to some of my favorite live performances
     that I go to when I need a work break!</p>
+    <div class="album-grid">
+      <div class="album-item">
+        <a href="https://www.youtube.com/watch?v=EXAMPLE1" target="_blank">
+          <img src="album1.jpg" alt="Album 1" class="album-cover">
+        </a>
+        <p class="album-title"><strong>Album Title 1</strong><br><em>by Artist Name 1</em></p>
+        <p class="song-list">Top Tracks: Song A, Song B, Song C</p>
+      </div>
+      <div class="album-item">
+        <a href="https://www.youtube.com/watch?v=EXAMPLE2" target="_blank">
+          <img src="album2.jpg" alt="Album 2" class="album-cover">
+        </a>
+        <p class="album-title"><strong>Album Title 2</strong><br><em>by Artist Name 2</em></p>
+        <p class="song-list">Top Tracks: Song D, Song E, Song F</p>
+      </div>
+      <div class="album-item">
+        <a href="https://www.youtube.com/watch?v=EXAMPLE3" target="_blank">
+          <img src="album3.jpg" alt="Album 3" class="album-cover">
+        </a>
+        <p class="album-title"><strong>Album Title 3</strong><br><em>by Artist Name 3</em></p>
+        <p class="song-list">Top Tracks: Song G, Song H, Song I</p>
+      </div>
+    </div>
   </div>
 
   <footer>
@@ -211,4 +234,5 @@
   </footer>
 </body>
 </html>
+
 
