@@ -64,7 +64,19 @@
       background: #ffffff;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-      text-align: center;
+      text-align: left;
+    }
+    .section-header {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #3f4a5a;
+      margin-top: 2rem;
+    }
+    .project-img {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin: 1rem 0;
     }
     footer {
       text-align: center;
@@ -99,9 +111,24 @@
   <div class="page-title">📊 Projects</div>
 
   <div class="container">
-    <p>This will be the last thing I edit because I will have to spend the most time on the actual content. For now, I'll probably
-    link my longer GitHub SP15 analysis, but will eventually want to create a shorter form of that project that is custom built
-    for this specific page. Paragraph or two for intro, EDA, models, and conclusions. Include a few (not too many) visuals too.</p>
+    <p>This page features a few personal data science projects that I've worked on. I'll continue updating it as I complete new ones (including this website itself!).</p>
+
+    <p class="section-header">Introduction & Motivation</p>
+    <p>California’s growing reliance on solar power presents both opportunities and forecasting challenges for the electric grid. This project explores whether publicly available weather forecast data can be used to accurately predict hourly solar energy generation in the SP15 region of California. The goal is to develop a modeling pipeline that can generalize across time and location, offering insights for grid operations and renewable integration.</p>
+
+    <p class="section-header">Data</p>
+    <p>I used the High Resolution Rapid Refresh (HRRR) model to collect gridded weather forecasts and combined this with actual hourly solar generation data from CAISO for the SP15 region. The final dataset covered three years of hourly forecasts at three grid points within SP15 and included variables like temperature, surface pressure, total precipitation, and solar radiation proxies.</p>
+
+    <p class="section-header">Feature Engineering</p>
+    <p>I engineered features such as lagged values of past actual and forecasted generation, time-of-day and seasonal indicators, and statistical summaries of nearby grid point forecasts. These helped the model capture cyclical trends and spatial variation within the SP15 region.</p>
+
+    <p class="section-header">Modeling</p>
+    <p>I trained and tuned multiple models including XGBoost and Random Forest regressors, using time-series cross-validation to preserve temporal integrity. XGBoost consistently outperformed the other models in terms of RMSE and MAE. Key predictive features included solar radiation proxies, time-of-day, and prior-day generation values.</p>
+
+    <img class="project-img" src="sp15-sample-plot.jpg" alt="Forecast vs Actual MW Plot">
+
+    <p class="section-header">Conclusion</p>
+    <p>This project shows how weather forecast data can be leveraged to make meaningful predictions about solar energy output at the grid level. While the model isn't ready for live deployment, it offers a scalable template for further refinement. You can view the full code and deeper analysis in the full <a href="https://github.com/lmutz/SP15-Solar-Gen/blob/main/SP15SolarGenProj.ipynb" target="_blank">GitHub notebook here</a>.</p>
   </div>
 
   <footer>
@@ -114,4 +141,3 @@
   </footer>
 </body>
 </html>
-
