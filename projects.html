@@ -148,7 +148,7 @@
 
     <p>Below is an abbreviated version of my most recent personal project, where I combined data from various sources to forecast solar
     energy generation in the SP15 region of Southern California. Enjoy learning about my motivation for the project and brief explanations
-    of different parts of this process. If you're interested in taking a deeper look a the full GitHub repo, you can find it at the bottom of 
+    of different parts of this process. If you're interested in taking a deeper look at the full GitHub repo, you can find it at the bottom of 
     this page or any page on this website. I will update this section with new projects as I complete them and break them down into shorter
     form reports.</p>
 
@@ -166,14 +166,14 @@
     <div class="image-row">
       <div class="image-column">
         <img class="side-by-side-img" src="SP15Region.jpg" alt="CAISO SP15 Region Map">
-        <div class="project-img-caption">State of California divided into three energy market zones as defined by the California Independent System Operator (CAISO).</div>
+        <div class="project-img-caption">Map of California showing the CAISO-defined electricity pricing zones: NP15, ZP26, and SP15. 
+        These broad regions guide grid operations but lack precise, publicly available geographic boundaries.</div>
       </div>
       <div class="image-column">
         <img class="side-by-side-img" src="SP15PolygonWithClusters.jpg" alt="SP15 Region with Clusters">
-        <div class="project-img-caption">CAISO does not release rigorous definitions of the SP15 region and its borders, so I created a 
-        shapely polygon using self-defined latitudinal and longitudinal borders to define this border myself. The three marked 
-        locations within the polygon represent the weighted centers of solar farm clusters identified using KMeans clustering, with 
-        each centroid adjusted toward areas of higher installed solar capacity within its respective cluster.</div>
+        <div class="project-img-caption">Custom-defined SP15 boundary using a shapely polygon based on latitude and longitude 
+        constraints. The three blue markers represent solar generation centroids derived from KMeans clustering of solar farm 
+        locations, weighted by each farm's generation capacity to better reflect where the most impactful solar production occurs.</div>
       </div>
     </div>
 
