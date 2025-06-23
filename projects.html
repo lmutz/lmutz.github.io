@@ -111,6 +111,9 @@
     .indented-list {
       margin-left: 1.5rem;
     }
+    .data-subsection {
+      margin-left: 1.5rem;
+    }
     footer {
       text-align: center;
       padding: 1.5rem 1rem 2rem;
@@ -178,9 +181,21 @@
     </div>
 
     <p class="section-header">Data</p>
-    <p>I used the High Resolution Rapid Refresh (HRRR) model to collect gridded weather forecasts and combined this with actual hourly solar generation data from CAISO for the SP15 region. The final dataset covered three years of hourly forecasts at three grid points within SP15 and included variables like temperature, surface pressure, total precipitation, and solar radiation proxies.</p>
+    <div class="data-subsection">
+      <p>- <strong>Solar Farms Data:</strong> To create the second figure in the Intro. section, I needed to collect location and production capacity data on 
+      Southern California solar farms. This data was downloaded from the United States Large-Scale Solar Photovoltaic Database (USPVDB) 
+      using the following link: Click <a href="https://energy.usgs.gov/uspvdb/assets/data/uspvdbCSV.zip" target="_blank">here</a>.</p>
 
-    <p class="section-header">Feature Engineering</p>
+      <p>- <strong>Weather Forecasts:</strong> To help model solar generation, I collected hourly weather forecast data from the High-Resolution Rapid Refresh (HRRR) 
+      model using the Herbie package in Python. HRRR is a physics-based atmospheric model that issues 48-hour forecasts every day at 
+      12 UTC, providing surface-level weather variables across thousands of grid points in the U.S.</p>
+
+      <p>- <strong>Actual and Predicted Solar Generation:</strong> To evaluate model performance, I used hourly solar generation data and day-ahead solar generation 
+      forecasts from the California Independent System Operator (CAISO). These values reflect total solar production and predictions across 
+      the entire SP15 region and were downloaded using CAISO’s OASIS API, found <a href="https://oasis.caiso.com/mrioasis/logon.do" target="_blank">here</a>.</p>
+    </div>
+
+    <p class="section-header">Data Handling & Feature Engineering</p>
     <p>I engineered features such as lagged values of past actual and forecasted generation, time-of-day and seasonal indicators, and statistical summaries of nearby grid point forecasts. These helped the model capture cyclical trends and spatial variation within the SP15 region.</p>
 
     <p class="section-header">Modeling</p>
@@ -202,4 +217,5 @@
   </footer>
 </body>
 </html>
+
 
