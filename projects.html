@@ -58,7 +58,7 @@
       margin-top: 0.5rem;
     }
     .container {
-      max-width: 1000px;
+      max-width: 800px;
       margin: auto;
       padding: 2rem;
       background: #ffffff;
@@ -79,19 +79,34 @@
       color: #1f1f1f;
       margin-top: 2rem;
     }
+    .image-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .image-column {
+      flex: 1;
+      text-align: center;
+    }
+    .side-by-side-img {
+      width: 100%;
+      max-height: 350px;
+      object-fit: contain;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .project-img-caption {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
     .project-img {
       width: 100%;
       height: auto;
       border-radius: 6px;
       border: 1px solid #ccc;
       margin: 1rem 0;
-    }
-    .project-img-caption {
-      font-size: 0.9rem;
-      color: #555;
-      margin-top: -0.75rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
     }
     .indented-list {
       margin-left: 1.5rem;
@@ -148,8 +163,19 @@
     provides hourly values for both actual and forecasted solar energy generation within the SP15 region and I will try to forecast 
     these values while outperforming their existing predictions.</p>
 
-    <img class="project-img" src="SP15Region.jpg" alt="CAISO SP15 Region Map" style="max-height: 350px; object-fit: contain;">
-    <div class="project-img-caption">State of California divided into three energy market zones as defined by the California Independent System Operator (CAISO).</div>
+    <div class="image-row">
+      <div class="image-column">
+        <img class="side-by-side-img" src="SP15Region.jpg" alt="CAISO SP15 Region Map">
+        <div class="project-img-caption">State of California divided into three energy market zones as defined by the California Independent System Operator (CAISO).</div>
+      </div>
+      <div class="image-column">
+        <img class="side-by-side-img" src="SP15PolygonWithClusters.jpg" alt="SP15 Region with Clusters">
+        <div class="project-img-caption">CAISO does not release rigorous definitions of the SP15 region and its borders, so I created a 
+        shapely polygon using self-defined latitudinal and longitudinal borders to define this border myself. The three marked 
+        locations within the polygon represent the weighted centers of solar farm clusters identified using KMeans clustering, with 
+        each centroid adjusted toward areas of higher installed solar capacity within its respective cluster.</div>
+      </div>
+    </div>
 
     <p class="section-header">Data</p>
     <p>I used the High Resolution Rapid Refresh (HRRR) model to collect gridded weather forecasts and combined this with actual hourly solar generation data from CAISO for the SP15 region. The final dataset covered three years of hourly forecasts at three grid points within SP15 and included variables like temperature, surface pressure, total precipitation, and solar radiation proxies.</p>
@@ -176,3 +202,4 @@
   </footer>
 </body>
 </html>
+
