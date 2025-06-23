@@ -204,7 +204,11 @@
     in the full GitHub repo, which also shows how I dealt with API pulls, API throttling, repetetive timestamps, and more. 
     <p>While this process took place over the course of the entire project, overnight values were eventually omitted from the dataset 
     entirely. As one might expect, overnight solar generation was largely 0 for both actual and predicted values. However, there were just 
-    enough negative and otherwise nonzero values during these hours to create a real learn-by-doing scenario. CONTINUE HERE </p></p>
+    enough negative and otherwise nonzero values during these hours to create a real learn-by-doing scenario. After spending a good bit 
+    of time trying to impute these values and manually setting them to zero for different hours of the day, I lifted my head for a breath 
+    and realized that these predictions served no real value, and can actually be counterproductive by introducing irrelevant noise 
+    to training data. The full GitHub repo shows this INCLUDE TEMPERATURE AND GUST HOURLY PROFILES & ACUTALS VS PREDICTED VISUALS 
+    WHEN I GET BACK.</p></p>
 
     <p class="section-header">Feature Engineering & Modeling</p>
     <p>I trained and tuned multiple models including XGBoost and Random Forest regressors, using time-series cross-validation to preserve temporal integrity. XGBoost consistently outperformed the other models in terms of RMSE and MAE. Key predictive features included solar radiation proxies, time-of-day, and prior-day generation values.</p>
