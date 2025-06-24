@@ -227,8 +227,36 @@
     The next step (although most of this process was iterative) was feature selection and engineering followed by model building and evaluation.</p>
 
     <p class="section-header">Feature Engineering & Modeling</p>
-    <p>I trained and tuned multiple models including XGBoost and Random Forest regressors, using time-series cross-validation to preserve temporal integrity. XGBoost consistently outperformed the other models in terms of RMSE and MAE. Key predictive features included solar radiation proxies, time-of-day, and prior-day generation values.</p>
-    <img class="project-img" src="sp15-sample-plot.jpg" alt="Forecast vs Actual MW Plot">
+
+    <p class="sub-sub-header">Feature Engineering and Selection</p>
+    <p>I experimented with several sets of features before finalizing my inputs. Temporal variables such as hour-of-day and day-of-year helped capture cyclical solar patterns. I also included lagged actual generation values and forecasted weather variables like downward shortwave radiation and cloud cover. I used correlation plots, domain knowledge, and permutation importance to narrow down variables.</p>
+
+    <div class="image-row">
+      <div class="image-column">
+        <img class="side-by-side-img" src="feature_corr.jpg" alt="Feature Correlation Heatmap">
+        <div class="project-img-caption">Correlation matrix among candidate features to detect redundancy and high-impact predictors.</div>
+      </div>
+      <div class="image-column">
+        <img class="side-by-side-img" src="feature_importance.jpg" alt="Feature Importance Plot">
+        <div class="project-img-caption">Permutation-based feature importance derived from a fitted XGBoost model.</div>
+      </div>
+    </div>
+
+    <p>The visuals above helped support some intuitive conclusions (e.g., radiation proxies matter most) while also revealing hidden redundancies or unexpectedly useful features.</p>
+
+    <p class="sub-sub-header">Model Building</p>
+    <p>After feature selection, I trained both Random Forest and XGBoost regressors using expanding-window cross-validation to respect time series ordering. I tuned hyperparameters via grid search with an eye toward generalization. XGBoost was the most robust performer across seasons and years.</p>
+
+    <img class="full-width-img" src="model_cv_perf.jpg" alt="Cross-Validation Performance Plot">
+    <div class="project-img-caption">Cross-validation RMSE and MAE by model type across different forecast seasons.</div>
+
+    <p>This helped identify that while Random Forests performed reasonably well in winter, XGBoost handled high-variance summer patterns more consistently.</p>
+
+    <img class="full-width-img" src="final_model_vs_caiso.jpg" alt="Final Model vs CAISO Forecast">
+    <div class="project-img-caption">Comparison of final model predictions against CAISO’s forecast over a 1-month test set.</div>
+
+    <p>In this final evaluation, my model showed clear improvements over CAISO’s forecast, particularly on high-generation days with more weather variability.</p>
+
 
     <p class="section-header">Conclusion</p>
     <p>This project shows how weather forecast data can be leveraged to make meaningful predictions about solar energy output at the grid level. While the model isn't ready for live deployment, it offers a scalable template for further refinement. You can view the full code and deeper analysis in the full <a href="https://github.com/lmutz/SP15-Solar-Gen/blob/main/SP15SolarGenProj.ipynb" target="_blank">GitHub notebook here</a>.</p>
