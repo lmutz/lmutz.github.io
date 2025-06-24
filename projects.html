@@ -232,7 +232,15 @@
     <p class="section-header">Feature Engineering & Modeling</p>
 
     <p class="sub-sub-header">Feature Engineering and Selection</p>
-    <p>I experimented with several sets of features before finalizing my inputs. Temporal variables such as hour-of-day and day-of-year helped capture cyclical solar patterns. I also included lagged actual generation values and forecasted weather variables like downward shortwave radiation and cloud cover. I used correlation plots, domain knowledge, and permutation importance to narrow down variables.</p>
+    <p>I experimented with several sets of features before finalizing my inputs. Initial feature matrix trimming came from eliminating the 
+    few variables with a high percentage of missing values. Following this, I investigated the number of unique observations and their associated frequencies for each potential 
+    predictor and eliminated all non-categorical variables with minimal variation as they would provide little predictive value while 
+    possibly introducing unnecessary noise or redundancy. Correlation heat maps were created for each location, and allowed me to further 
+    trim the feature matrix as some features were perfect or near-perfect predictors of one another. Groups of variables measuring 
+    similar aspects of weather, like those related to upward and downward radiation, were unsurprisingly highly correlated, as shown 
+    in the abbreviated heat map below. While the tree-based models I used handle highly correlated variables well, I performed PCA on 
+    these variables and created a new variable representing the first principal component in case I decided to explore other modeling 
+    approaches. </p>
 
     <div class="image-row">
       <div class="image-column">
@@ -245,7 +253,16 @@
       </div>
     </div>
 
-    <p>The visuals above helped support some intuitive conclusions (e.g., radiation proxies matter most) while also revealing hidden redundancies or unexpectedly useful features.</p>
+    <p>After trimming the feature matrix down I wanted to add a few features that I thought could be beneficial. In the spirit of 
+      learning, I decided to implement a new time-encoding approach I had read about online and I was impressed by both its intuitive 
+      explanation and its eventual improvement of model performance. This approach, which is beautifully illustrated in the second 
+      image above, models time as a cyclical feature instead of a linear feature. With a bit of trigonometry, sine and cosine can be 
+      used together to map time into an (x, y) coordinate on a circle. This allows times at the end of a day or year to be represented 
+      as close to times at the beginning, unlike in linear encoding. Linear encoding, for example, treats hour 23 as far away from hour 1, even though 
+      we know that they are only a few hours apart in reality. Another variable that I added was a two-day lag of the target variable. 
+      Although model performance likely would have been better if I had used a one-day lag, day-ahead weather forecasts are released early in 
+      the morning before actual generation data for the current day is available, making a one-day lag infeasible in practice. A full list of 
+    variables used, as well as their descriptions and units of measure, is available in the full repository.</p>
 
     <p class="sub-sub-header">Model Building</p>
     <p>After feature selection, I trained both Random Forest and XGBoost regressors using expanding-window cross-validation to respect time series ordering. I tuned hyperparameters via grid search with an eye toward generalization. XGBoost was the most robust performer across seasons and years.</p>
