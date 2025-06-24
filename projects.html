@@ -203,19 +203,22 @@
         Hour of Day is equivalent to hour-end.</div>
       </div>
     </div>
-    <p>These visualizations confirmed strong diurnal patterns in both temperature and pressure, with afternoon peaks and morning troughs consistent across most days. The variation between locations justifies using multiple geographic points instead of aggregating across the entire region.</p>
+    <p>After confirming that the target variable behaves how I would expect, I did a similar investigation with the HRRR weather variables 
+    after grouping them by location. The below images illustrate how some variables behave in a very similar way across different locations 
+    (temperature), and some variables behave in unique ways across different locations (wind gust). These images show that the diverse 
+    geography of California can result in unique weather patterns for nearby locations.</p>
 
     <div class="image-row">
       <div class="image-column">
-        <img class="side-by-side-img" src="eda_image3.jpg" alt="EDA Image 3">
-        <div class="project-img-caption">Actual vs. predicted solar generation for a sample 2-week period in spring.</div>
+        <img class="side-by-side-img" src="temp.jpg" alt="EDA Image 3">
+        <div class="project-img-caption">Hourly profile of temperature (degrees Fahrenheit) for three locations in Southern California.</div>
       </div>
       <div class="image-column">
-        <img class="side-by-side-img" src="eda_image4.jpg" alt="EDA Image 4">
-        <div class="project-img-caption">Scatterplot of residuals vs. hour-of-day, revealing systematic bias in CAISO forecasts.</div>
+        <img class="side-by-side-img" src="gust.jpg" alt="EDA Image 4">
+        <div class="project-img-caption">Hourly profile of wind gust (m/s) for three locations in Southern California.</div>
       </div>
     </div>
-    <p>Together, these exploratory graphics gave insight into how prediction error varies throughout the day and across space, helping to shape my modeling decisions and feature engineering strategy.</p>
+    <p>Something final here</p>
 
     <p class="section-header">Feature Engineering & Modeling</p>
     <p>I trained and tuned multiple models including XGBoost and Random Forest regressors, using time-series cross-validation to preserve temporal integrity. XGBoost consistently outperformed the other models in terms of RMSE and MAE. Key predictive features included solar radiation proxies, time-of-day, and prior-day generation values.</p>
