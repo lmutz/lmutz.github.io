@@ -218,7 +218,13 @@
         <div class="project-img-caption">Hourly profile of wind gust (m/s) for three locations in Southern California.</div>
       </div>
     </div>
-    <p>Something final here</p>
+    <p>The HRRR weather forecast downloads provide a wide selection of variables that were of varying degrees of interest for predicting 
+    regional solar energy generation. Aside from deciding how to deal with overnight target variable values, no imputation was required. 
+    Very few variables had a significant amount of missing values, and those that did were omitted. Once variables with minimal amounts 
+    of variation (elevation, categorical freezing rain, etc.) were removed, no remaining variables had more than .01% missing observations. 
+    Given these percentages, and length of the dataset, I was comfortable removing any rows with missing values. This allowed me to avoid 
+    spending time imputing variables based on location that, in all likelihood, would not make a significant difference in model performance. 
+    The next step (although most of this process was iterative) was feature selection and engineering followed by model building and evaluation.</p>
 
     <p class="section-header">Feature Engineering & Modeling</p>
     <p>I trained and tuned multiple models including XGBoost and Random Forest regressors, using time-series cross-validation to preserve temporal integrity. XGBoost consistently outperformed the other models in terms of RMSE and MAE. Key predictive features included solar radiation proxies, time-of-day, and prior-day generation values.</p>
