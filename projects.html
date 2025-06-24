@@ -265,17 +265,29 @@
     variables used, as well as their descriptions and units of measure, is available in the full repository.</p>
 
     <p class="sub-sub-header">Model Building</p>
-    <p>After feature selection, I trained both Random Forest and XGBoost regressors using expanding-window cross-validation to respect time series ordering. I tuned hyperparameters via grid search with an eye toward generalization. XGBoost was the most robust performer across seasons and years.</p>
+    <p>Model building and evalutaion was done using both random forest and XGBoost. The model building phase gave me the opportunity 
+      to apply several time series best practices, including temporal train/test splits that prevent data leakage and a walk-forward 
+      testing approach to evaluate model performance across different times of the year. My biggest focus during model evaluation was 
+    beating benchmark predictions for both RMSE and MAE, while doing my best to prevent overfitting. This process was a bit of a back-and-forth 
+    dance and gave me the opportunity to reflect on the tradeoffs between predictive preformance and overfitting.</p>
+  
+    <p>After experimenting with different combinations of variables and tuning hyperparameters through grid search, I was able to 
+      outperform existing benchmarks for both RMSE and MAE using XGBoost. With Random Forest, I beat the benchmark for RMSE and came 
+      very close on MAE. I then averaged the three hourly predictions (one from each location) to produce a single prediction per hour, 
+      which allowed me to surpass the benchmark on both error metrics for both models. Below is a roughly 13-day period of actual solar generation, 
+    benchmark predictions, and model predictions.</p>
 
-    <img class="full-width-img" src="model_cv_perf.jpg" alt="Cross-Validation Performance Plot">
-    <div class="project-img-caption">Cross-validation RMSE and MAE by model type across different forecast seasons.</div>
+    <img class="full-width-img" src="errors.jpg" alt="Cross-Validation Performance Plot">
+    <div class="project-img-caption">Solar generation forecasts vs actuals</div>
 
-    <p>This helped identify that while Random Forests performed reasonably well in winter, XGBoost handled high-variance summer patterns more consistently.</p>
+    <img class="full-width-img" src="absoluteerror.jpg" alt="Final Model vs CAISO Forecast">
+    <div class="project-img-caption">Abnormal error investigation</div>
 
-    <img class="full-width-img" src="final_model_vs_caiso.jpg" alt="Final Model vs CAISO Forecast">
-    <div class="project-img-caption">Comparison of final model predictions against CAISO’s forecast over a 1-month test set.</div>
-
-    <p>In this final evaluation, my model showed clear improvements over CAISO’s forecast, particularly on high-generation days with more weather variability.</p>
+    <p>Most absolute error plots were relatively stable, with one brief period showing unusually large errors, as seen in the image 
+      above. I was selfishly hoping the spike might be due to something interesting, like a solar eclipse that the models and 
+      benchmark failed to account for, but that wasn't the case. Cross-referencing with the CAISO API revealed that the spike was 
+      simply due to an abnormally low actual solar generation value reported for that hour. It’s unclear why the drop occurred, but 
+      it appears to reflect a data anomaly rather than a modeling oversight.</p>
 
 
     <p class="section-header">Conclusion</p>
