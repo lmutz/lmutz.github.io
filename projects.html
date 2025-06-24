@@ -166,19 +166,19 @@
     <div class="image-row">
       <div class="image-column">
         <img class="side-by-side-img" src="SP15Region.jpg" alt="CAISO SP15 Region Map">
-        <div class="project-img-caption">Map of California showing the CAISO-defined electricity pricing zones: NP15, ZP26, and SP15.</div>
+        <div class="project-img-caption">Map of California showing the CAISO-defined electricity pricing zones: NP15, ZP26, and SP15. These broad regions guide grid operations but lack precise, publicly available geographic boundaries.</div>
       </div>
       <div class="image-column">
         <img class="side-by-side-img" src="SP15PolygonWithClusters.jpg" alt="SP15 Region with Clusters">
-        <div class="project-img-caption">Custom SP15 polygon with centroid clusters weighted by solar capacity.</div>
+        <div class="project-img-caption">Custom-defined SP15 boundary using a shapely polygon based on latitude and longitude constraints. The three blue markers represent solar generation centroids derived from KMeans clustering of solar farm locations, weighted by each farm's generation capacity to better reflect where the most impactful solar production occurs.</div>
       </div>
     </div>
 
     <p class="section-header">Data</p>
     <div class="data-subsection">
-      <p>- <strong>Solar Farms Data:</strong> To create the second figure above, I collected location and capacity data on Southern California solar farms from the USPVDB. You can download it <a href="https://energy.usgs.gov/uspvdb/assets/data/uspvdbCSV.zip" target="_blank">here</a>.</p>
-      <p>- <strong>Weather Forecasts:</strong> I retrieved hourly HRRR model forecasts using the Herbie Python package. These forecasts provide detailed surface weather data.</p>
-      <p>- <strong>Actual and Predicted Solar Generation:</strong> Hourly solar data and forecasts from CAISO’s OASIS API were used to evaluate model performance. Downloadable <a href="https://oasis.caiso.com/mrioasis/logon.do" target="_blank">here</a>.</p>
+      <p>- <strong>Solar Farms Data:</strong> To create the second figure in the Intro. section, I needed to collect location and production capacity data on Southern California solar farms. This data was downloaded from the United States Large-Scale Solar Photovoltaic Database (USPVDB) using the following link: Click <a href="https://energy.usgs.gov/uspvdb/assets/data/uspvdbCSV.zip" target="_blank">here</a>.</p>
+      <p>- <strong>Weather Forecasts:</strong> To help model solar generation, I collected hourly weather forecast data from the High-Resolution Rapid Refresh (HRRR) model using the Herbie package in Python. HRRR is a physics-based atmospheric model that issues 48-hour forecasts every day at 12 UTC, providing surface-level weather variables across thousands of grid points in the U.S.</p>
+      <p>- <strong>Actual and Predicted Solar Generation:</strong> To evaluate model performance, I used hourly solar generation data and day-ahead solar generation forecasts from the California Independent System Operator (CAISO). These values reflect total solar production and predictions across the entire SP15 region and were downloaded using CAISO’s OASIS API, found <a href="https://oasis.caiso.com/mrioasis/logon.do" target="_blank">here</a>.</p>
     </div>
 
     <p class="section-header">Data Handling & EDA</p>
@@ -187,15 +187,20 @@
     <p>Much of the less visible legwork in this project involved cleaning and filtering the data to avoid misleading patterns and reduce modeling noise. For example, I ultimately chose to exclude overnight hours from the dataset entirely, but only after considerable back and forth experimentation with how to handle slightly negative or low non-zero solar generation values during hours when the sun was clearly down. These observations didn’t contribute meaningfully to forecasting and, in fact, hurt model performance by inflating error metrics and enabling overfitting to irrelevant patterns.</p>
 
     <p class="sub-sub-header">EDA</p>
-    <p>This section explores patterns and insights from the cleaned dataset. I created visual summaries of hourly trends, key variables, and model inputs to understand how weather and time-of-day factors relate to solar generation.</p>
+    <p>A more thorough investigation of the dataset is detailed in the full repository, but I will include a selection of visualizations 
+    and figures here to help illustrate some of its defining characteristics. The first set of visualizations found below are the hourly 
+    distributions of the target variable (predicted and actual). As you might have expected, these distributions follow a cyclical 
+    pattern with peak values and larger errors found towards the middle of the day.</p>
     <div class="image-row">
       <div class="image-column">
-        <img class="side-by-side-img" src="eda_image1.jpg" alt="EDA Image 1">
-        <div class="project-img-caption">Hourly temperature profiles across the three cluster locations (averaged over several years).</div>
+        <img class="side-by-side-img" src="predbox.jpg" alt="EDA Image 1">
+        <div class="project-img-caption">Hourly profile of predicted solar energy generation in the SP15 region of Southern California. 
+        Hour of Day is equivalent to hour-end.</div>
       </div>
       <div class="image-column">
-        <img class="side-by-side-img" src="eda_image2.jpg" alt="EDA Image 2">
-        <div class="project-img-caption">Surface pressure variability throughout the day, highlighting location-specific microclimates.</div>
+        <img class="side-by-side-img" src="actualgen.jpg" alt="EDA Image 2">
+        <div class="project-img-caption">Hourly profile of actual solar energy generation in the SP15 region of Southern California. 
+        Hour of Day is equivalent to hour-end.</div>
       </div>
     </div>
     <p>These visualizations confirmed strong diurnal patterns in both temperature and pressure, with afternoon peaks and morning troughs consistent across most days. The variation between locations justifies using multiple geographic points instead of aggregating across the entire region.</p>
