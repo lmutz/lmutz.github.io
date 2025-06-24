@@ -96,12 +96,15 @@
       flex-direction: column;
       justify-content: center;
     }
-    .side-by-side-img {
+    .side-by-side-img,
+    .full-width-img {
       width: 100%;
       max-height: 350px;
       object-fit: contain;
       border-radius: 6px;
       border: 1px solid #ccc;
+      margin: 1rem 0;
+      display: block;
     }
     .project-img-caption {
       font-size: 0.9rem;
@@ -277,11 +280,15 @@
       which allowed me to surpass the benchmark on both error metrics for both models. Below is a roughly 13-day period of actual solar generation, 
     benchmark predictions, and model predictions.</p>
 
-    <img class="full-width-img" src="errors.jpg" alt="Cross-Validation Performance Plot">
-    <div class="project-img-caption">Solar generation forecasts vs actuals</div>
+    <div class="image-column">
+      <img class="full-width-img" src="errors.jpg" alt="Cross-Validation Performance Plot">
+      <div class="project-img-caption">Solar generation forecasts vs actuals</div>
+    </div>
 
-    <img class="full-width-img" src="absoluteerror.jpg" alt="Final Model vs CAISO Forecast">
-    <div class="project-img-caption">Abnormal error investigation</div>
+    <div class="image-column">
+      <img class="full-width-img" src="absoluteerror.jpg" alt="Final Model vs CAISO Forecast">
+      <div class="project-img-caption">Abnormal error investigation</div>
+    </div>
 
     <p>Most absolute error plots were relatively stable, with one brief period showing unusually large errors, as seen in the image 
       above. I was selfishly hoping the spike might be due to something interesting, like a solar eclipse that the models and 
