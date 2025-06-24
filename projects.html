@@ -153,12 +153,28 @@
   <div class="container">
     <p class="project-main-title">California Solar Energy Generation Forecasting</p>
 
-    <p>Below is an abbreviated version of my most recent personal project, where I combined data from various sources to forecast solar energy generation in the SP15 region of Southern California...</p>
+    <p>Below is an abbreviated version of my most recent personal project, where I combined data from various sources to forecast solar energy generation in the SP15 region of Southern California. Enjoy learning about my motivation for the project and brief explanations of different parts of this process. If you're interested in taking a deeper look at the full GitHub repo, you can find it at the bottom of this page or any page on this website. I will update this section with new projects as I complete them and break them down into shorter form reports.</p>
 
-    <!-- (Sections like Introduction, Motivation, and Data come here — skipped here for brevity if unchanged) -->
+    <p class="section-header">Introduction & Motivation</p>
+    <div class="indented-list">
+      <p>1. Conduct an analysis on subject matter outside of my usual focus, but one that is of interest for potential professional opportunities.</p>
+      <p>2. Give myself an opportunity to improve my skills with various tools, techniques, and methodologies, such as API interactions, time-series forecasting, and XGBoost model building and evaluation.</p>
+      <p>3. Find a balance between showcasing what I already know and demonstrating how I approach and work through a project using tools and techniques I've yet to master, within a new subject area.</p>
+    </div>
+    <p>Project goal: Use High-Resolution Rapid Refresh (HRRR) weather forecasts at geographically significant locations to predict hourly solar energy generation in the SP15 region of Southern California. The California Independent System Operator (CAISO) provides hourly values for both actual and forecasted solar energy generation within the SP15 region and I will try to forecast these values while outperforming their existing predictions.</p>
+
+    <div class="image-row">
+      <div class="image-column">
+        <img class="side-by-side-img" src="SP15Region.jpg" alt="CAISO SP15 Region Map">
+        <div class="project-img-caption">Map of California showing the CAISO-defined electricity pricing zones: NP15, ZP26, and SP15. These broad regions guide grid operations but lack precise, publicly available geographic boundaries.</div>
+      </div>
+      <div class="image-column">
+        <img class="side-by-side-img" src="SP15PolygonWithClusters.jpg" alt="SP15 Region with Clusters">
+        <div class="project-img-caption">Custom-defined SP15 boundary using a shapely polygon based on latitude and longitude constraints. The three blue markers represent solar generation centroids derived from KMeans clustering of solar farm locations, weighted by each farm's generation capacity to better reflect where the most impactful solar production occurs.</div>
+      </div>
+    </div>
 
     <p class="section-header">Data Handling & EDA</p>
-    
     <p class="sub-sub-header">Data Handling</p>
     <p>To incorporate the three cluster-based locations shown in the second figure of the Introduction, I first identified the nearest 
     HRRR forecast grid point to each centroid by computing the Euclidean distance between all available grid points and each cluster’s 
@@ -167,7 +183,6 @@
     and predicted solar generation records. This process involved a fair amount of tedious but necessary work, including learning to 
     work around API rate limits, addressing overlapping timestamps from neighboring forecasts, and structuring multi-source data into a 
     unified hourly format.</p>
-
     <p>Much of the less visible legwork in this project involved cleaning and filtering the data to avoid misleading patterns and 
     reduce modeling noise. For example, I ultimately chose to exclude overnight hours from the dataset entirely, but only after 
     considerable back and forth experimentation with how to handle slightly negative or low non-zero solar generation values during 
@@ -218,5 +233,6 @@
   </footer>
 </body>
 </html>
+
 
 
