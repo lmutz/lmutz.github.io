@@ -269,11 +269,11 @@
     variables used, as well as their descriptions and units of measure, is available in the full repository.</p>
 
     <p class="sub-sub-header">Model Building</p>
-    <p>Model building and evalutaion was done using both random forest and XGBoost. The model building phase gave me the opportunity 
+    <p>Model building and evaluation was done using both random forest and XGBoost. The model building phase gave me the opportunity 
       to apply several time series best practices, including temporal train/test splits that prevent data leakage and a walk-forward 
       testing approach to evaluate model performance across different times of the year. My biggest focus during model evaluation was 
     beating benchmark predictions for both RMSE and MAE, while doing my best to prevent overfitting. This process was a bit of a back-and-forth 
-    dance and gave me the opportunity to reflect on the tradeoffs between predictive preformance and overfitting.</p>
+    dance and gave me the opportunity to reflect on the tradeoffs between predictive performance and overfitting.</p>
   
     <p>After experimenting with different combinations of variables and tuning hyperparameters through grid search, I was able to 
       outperform existing benchmarks for both RMSE and MAE using XGBoost. With Random Forest, I beat the benchmark for RMSE and came 
