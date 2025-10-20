@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solar Energy Forecasting | Luke Mutz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f7fa;
+      color: #1f1f1f;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      background-color: #5a6778;
+      padding: 0.5rem 2rem;
+      gap: 1rem;
+    }
+    .nav-name {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: #ffffff;
+      margin-right: 2rem;
+    }
+    nav a {
+      color: #ffffff;
+      background-color: transparent;
+      border: 1px solid #c0c6d0;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: background 0.3s, color 0.3s;
+    }
+    nav a:hover {
+      background-color: #76869b;
+      color: #ffffff;
+    }
+    .breadcrumb {
+      padding: 1rem 2rem;
+      font-size: 0.9rem;
+      color: #5a6778;
+    }
+    .breadcrumb a {
+      color: #5a6778;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .breadcrumb a:hover {
+      color: #3f4a5a;
+      text-decoration: underline;
+    }
+    .breadcrumb span {
+      margin: 0 0.5rem;
+    }
+    .page-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #3f4a5a;
+      text-align: left;
+      margin: 1rem 2rem 1rem;
+      position: relative;
+      width: fit-content;
+    }
+    .page-title::after {
+      content: '';
+      display: block;
+      height: 2px;
+      background: linear-gradient(to right, transparent, #3f4a5a, transparent);
+      margin-top: 0.5rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      text-align: left;
+    }
+    .project-main-title {
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: #1f1f1f;
+    }
+    .section-header {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1f1f1f;
+      margin-top: 2rem;
+    }
+    .sub-sub-header {
+      font-weight: bold;
+      margin-top: 1.5rem;
+    }
+    .image-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .image-column {
+      flex: 1;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .side-by-side-img,
+    .full-width-img {
+      width: 100%;
+      max-height: 350px;
+      object-fit: contain;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin: 1rem 0;
+      display: block;
+    }
+    .project-img-caption {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+    .project-img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin: 1rem 0;
+    }
+    .indented-list {
+      margin-left: 1.5rem;
+    }
+    .data-subsection {
+      margin-left: 1.5rem;
+    }
+    .back-to-projects {
+      display: inline-block;
+      margin: 2rem 0 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #5a6778;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .back-to-projects:hover {
+      background-color: #3f4a5a;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem 2rem;
+      background-color: #3f4a5a;
+      color: white;
+      margin-top: 2rem;
+    }
+    .footer-icons {
+      margin-bottom: 1rem;
+    }
+    .footer-icons a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
+    .footer-icons a:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-name">Luke Mutz</div>
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">🚶‍♂️ About</a>
+    <a href="projects.html">📊 Projects</a>
+    <a href="resume.html">📝 Resume</a>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="projects.html">📊 Projects</a>
+    <span>›</span>
+    <span>California Solar Energy Forecasting</span>
+  </div>
+
+  <div class="page-title">☀️ California Solar Energy Forecasting</div>
+
+  <div class="container">
+    <a href="projects.html" class="back-to-projects">← Back to All Projects</a>
+
+    <p class="project-main-title">California Solar Energy Generation Forecasting</p>
+
+    <p>Below is an abbreviated version of my most recent personal project, where I combined data from various sources to forecast solar energy generation in the SP15 region of Southern California. Enjoy learning about my motivation for the project and brief explanations of different parts of this process. If you're interested in taking a deeper look at the full GitHub repo, you can find it at the bottom of this page or any page on this website. I will update this section with new projects as I complete them and break them down into shorter form reports.</p>
+
+    <p class="section-header">Introduction & Motivation</p>
+    <div class="indented-list">
+    <p>This project was inspired by the following personal goals:</p>
+      <p>1. Conduct an analysis on subject matter outside of my usual focus, but one that is of interest for potential professional opportunities.</p>
+      <p>2. Give myself an opportunity to improve my skills with various tools, techniques, and methodologies, such as API interactions, time-series forecasting, and XGBoost model building and evaluation.</p>
+      <p>3. Find a balance between showcasing what I already know and demonstrating how I approach and work through a project using tools and techniques I've yet to master, within a new subject area.</p>
+    </div>
+    <p>Project goal: Use High-Resolution Rapid Refresh (HRRR) weather forecasts at geographically significant locations to predict hourly solar energy generation in the SP15 region of Southern California. The California Independent System Operator (CAISO) provides hourly values for both actual and forecasted solar energy generation within the SP15 region and I will try to forecast these values while outperforming their existing predictions.</p>
+
+    <div class="image-row">
+      <div class="image-column">
+        <img class="side-by-side-img" src="SP15Region.jpg" alt="CAISO SP15 Region Map">
+        <div class="project-img-caption">Map of California showing the CAISO-defined electricity pricing zones: NP15, ZP26, and SP15. These broad regions guide grid operations but lack precise, publicly available geographic boundaries.</div>
+      </div>
+      <div class="image-column">
+        <img class="side-by-side-img" src="SP15PolygonWithClusters.jpg" alt="SP15 Region with Clusters">
+        <div class="project-img-caption">Custom-defined SP15 boundary using a shapely polygon based on latitude and longitude constraints. The three blue markers represent solar generation centroids derived from KMeans clustering of solar farm locations, weighted by each farm's generation capacity to better reflect where the most impactful solar production occurs.</div>
+      </div>
+    </div>
+
+    <p class="section-header">Data</p>
+    <div class="data-subsection">
+      <p>- <strong>Solar Farms Data:</strong> To create the second figure in the Intro. section, I needed to collect location and production capacity data on Southern California solar farms. This data was downloaded from the United States Large-Scale Solar Photovoltaic Database (USPVDB) using the following link: Click <a href="https://energy.usgs.gov/uspvdb/assets/data/uspvdbCSV.zip" target="_blank">here</a>.</p>
+      <p>- <strong>Weather Forecasts:</strong> To help model solar generation, I collected hourly weather forecast data from the High-Resolution Rapid Refresh (HRRR) model using the Herbie package in Python. HRRR is a physics-based atmospheric model that issues 48-hour forecasts every day at 12 UTC, providing surface-level weather variables across thousands of grid points in the U.S.</p>
+      <p>- <strong>Actual and Predicted Solar Generation:</strong> To evaluate model performance, I used hourly solar generation data and day-ahead solar generation forecasts from the California Independent System Operator (CAISO). These values reflect total solar production and predictions across the entire SP15 region and were downloaded using CAISO's OASIS API, found <a href="https://oasis.caiso.com/mrioasis/logon.do" target="_blank">here</a>.</p>
+    </div>
+
+    <p class="section-header">Data Handling & EDA</p>
+    <p class="sub-sub-header">Data Handling</p>
+    <p>To incorporate the three cluster-based locations shown in the second figure of the Introduction, I first identified the nearest HRRR forecast grid point to each centroid by computing the Euclidean distance between all available grid points and each cluster's latitude/longitude center. These three selected grid points allowed me to track location-specific surface-level weather forecasts at an hourly resolution. After converting timestamps from UTC to Pacific Time, I merged the HRRR forecast data with CAISO's actual and predicted solar generation records. This process involved a fair amount of tedious but necessary work, including learning to work around API rate limits, addressing overlapping timestamps from neighboring forecasts, and structuring multi-source data into a unified hourly format.</p>
+    <p>Much of the less visible legwork in this project involved cleaning and filtering the data to avoid misleading patterns and reduce modeling noise. For example, I ultimately chose to exclude overnight hours from the dataset entirely, but only after considerable back and forth experimentation with how to handle slightly negative or low non-zero solar generation values during hours when the sun was clearly down. These observations didn't contribute meaningfully to forecasting and, in fact, hurt model performance by inflating error metrics and enabling overfitting to irrelevant patterns.</p>
+
+    <p class="sub-sub-header">EDA</p>
+    <p>A more thorough investigation of the dataset is detailed in the full repository, but I will include a selection of visualizations 
+    and figures here to help illustrate some of its defining characteristics. The first set of visualizations found below are the hourly 
+    distributions of the target variable (predicted and actual). As you might have expected, these distributions follow a cyclical 
+    pattern with peak values and larger errors found towards the middle of the day.</p>
+    <div class="image-row">
+      <div class="image-column">
+        <img class="side-by-side-img" src="predbox.jpg" alt="EDA Image 1">
+        <div class="project-img-caption">Hourly profile of predicted solar energy generation in the SP15 region of Southern California. 
+        Hour of Day is equivalent to hour-end.</div>
+      </div>
+      <div class="image-column">
+        <img class="side-by-side-img" src="actualgen.jpg" alt="EDA Image 2">
+        <div class="project-img-caption">Hourly profile of actual solar energy generation in the SP15 region of Southern California. 
+        Hour of Day is equivalent to hour-end.</div>
+      </div>
+    </div>
+    <p>After confirming that the target variable behaves how I would expect, I did a similar investigation with the HRRR weather variables 
+    after grouping them by location. The below images illustrate how some variables behave in a very similar way across different locations 
+    (temperature), and some variables behave in unique ways across different locations (wind gust). These images show that the diverse 
+    geography of California can result in unique weather patterns for nearby locations.</p>
+
+    <div class="image-row">
+      <div class="image-column">
+        <img class="side-by-side-img" src="temp.jpg" alt="EDA Image 3">
+        <div class="project-img-caption">Hourly profile of temperature (degrees Fahrenheit) for three locations in Southern California.</div>
+      </div>
+      <div class="image-column">
+        <img class="side-by-side-img" src="gust.jpg" alt="EDA Image 4">
+        <div class="project-img-caption">Hourly profile of wind gust (m/s) for three locations in Southern California.</div>
+      </div>
+    </div>
+    <p>The HRRR weather forecast downloads provide a wide selection of variables that were of varying degrees of interest for predicting 
+    regional solar energy generation. Aside from deciding how to deal with overnight target variable values, no imputation was required. 
+    Very few variables had a significant amount of missing values, and those that did were omitted. Once variables with minimal amounts 
+    of variation (elevation, categorical freezing rain, etc.) were removed, no remaining variables had more than .01% missing observations. 
+    Given these percentages, and length of the dataset, I was comfortable removing any rows with missing values. This allowed me to avoid 
+    spending time imputing variables based on location that, in all likelihood, would not make a significant difference in model performance. 
+    The next step (although most of this process was iterative) was feature selection and engineering followed by model building and evaluation.</p>
+
+    <p class="section-header">Feature Engineering & Modeling</p>
+
+    <p class="sub-sub-header">Feature Engineering and Selection</p>
+    <p>I experimented with several sets of features before finalizing my inputs. Initial feature matrix trimming came from eliminating the 
+    few variables with a high percentage of missing values. Following this, I investigated the number of unique observations and their associated frequencies for each potential 
+    predictor and eliminated all non-categorical variables with minimal variation as they would provide little predictive value while 
+    possibly introducing unnecessary noise or redundancy. Correlation heat maps were created for each location, and allowed me to further 
+    trim the feature matrix as some features were perfect or near-perfect predictors of one another. Groups of variables measuring 
+    similar aspects of weather, like those related to upward and downward radiation, were unsurprisingly highly correlated, as shown 
+    in the abbreviated heat map below. While the tree-based models I used handle highly correlated variables well, I performed PCA on 
+    these variables and created a new variable representing the first principal component in case I decided to explore other modeling 
+    approaches. </p>
+
+    <div class="image-row">
+      <div class="image-column">
+        <img class="side-by-side-img" src="Heatmap.jpg" alt="Feature Correlation Heatmap">
+        <div class="project-img-caption">Correlation Heatmap of four highly correlated variables for one of the three locations of interest (Blythe, CA).</div>
+      </div>
+      <div class="image-column">
+        <img class="side-by-side-img" src="cyclicaltime.jpg" alt="Feature Importance Plot">
+        <div class="project-img-caption">Linear vs. Cyclical mapping of time. Image source: <a href="https://blog.dailydoseofds.com/p/cyclical-feature-engineering" target="_blank">Daily Dose of Data Science Article</a>.</div>
+      </div>
+    </div>
+
+    <p>After trimming the feature matrix down I wanted to add a few features that I thought could be beneficial. In the spirit of 
+      learning, I decided to implement a new time-encoding approach I had read about online and I was impressed by both its intuitive 
+      explanation and its eventual improvement of model performance. This approach, which is beautifully illustrated in the second 
+      image above, models time as a cyclical feature instead of a linear feature. With a bit of trigonometry, sine and cosine can be 
+      used together to map time into an (x, y) coordinate on a circle. This allows times at the end of a day or year to be represented 
+      as close to times at the beginning, unlike in linear encoding. Linear encoding, for example, treats hour 23 as far away from hour 1, even though 
+      we know that they are only a few hours apart in reality. Another variable that I added was a two-day lag of the target variable. 
+      Although model performance likely would have been better if I had used a one-day lag, day-ahead weather forecasts are released early in 
+      the morning before actual generation data for the current day is available, making a one-day lag infeasible in practice. A full list of 
+    variables used, as well as their descriptions and units of measure, is available in the full repository.</p>
+
+    <p class="sub-sub-header">Model Building</p>
+    <p>Model building and evaluation was done using both random forest and XGBoost. The model building phase gave me the opportunity 
+      to apply several time series best practices, including temporal train/test splits that prevent data leakage and a walk-forward 
+      testing approach to evaluate model performance across different times of the year. My biggest focus during model evaluation was 
+    beating benchmark predictions for both RMSE and MAE, while doing my best to prevent overfitting. This process was a bit of a back-and-forth 
+    dance and gave me the opportunity to reflect on the tradeoffs between predictive performance and overfitting.</p>
+  
+    <p>After experimenting with different combinations of variables and tuning hyperparameters through grid search, I was able to 
+      outperform existing benchmarks for both RMSE and MAE using XGBoost. With Random Forest, I beat the benchmark for RMSE and came 
+      very close on MAE. I then averaged the three hourly predictions (one from each location) to produce a single prediction per hour, 
+      which allowed me to surpass the benchmark on both error metrics for both models. Below is a roughly 13-day period of actual solar generation, 
+    benchmark predictions, and model predictions.</p>
+
+    <div class="image-column">
+      <img class="full-width-img" src="errors.jpg" alt="Cross-Validation Performance Plot">
+      <div class="project-img-caption">Solar generation forecasts vs actuals</div>
+    </div>
+
+    <div class="image-column">
+      <img class="full-width-img" src="absoluteerror.jpg" alt="Final Model vs CAISO Forecast">
+      <div class="project-img-caption">Abnormal error investigation</div>
+    </div>
+
+    <p>Most absolute error plots were relatively stable, with one brief period showing unusually large errors, as seen in the image 
+      above. I was selfishly hoping the spike might be due to something interesting, like a solar eclipse that the models and 
+      benchmark failed to account for, but that wasn't the case. Cross-referencing with the CAISO API revealed that the spike was 
+      simply due to an abnormally low actual solar generation value reported for that hour. It's unclear why the drop occurred, but 
+      it appears to reflect a data anomaly rather than a modeling oversight.</p>
+
+    <p class="section-header">Conclusion</p>
+    <p>This project gave me the opportunity to explore a field I was unfamiliar with: solar energy forecasting. I sharpened my skills in areas like time series modeling, weather data handling, and API usage while building and evaluating Random Forest and XGBoost models using weather forecasts from three key Southern California locations. I incorporated meaningful features like cyclically-encoded time variables and a two-day lag of actual generation while attempting to avoid overfitting and improve predictive performance. The most important drivers of performance were radiation related inputs, time-of-day variables, and decisions made during the feature selection and feature engineering process. Hyperparameter tuning helped refine these models, although I certainly could have left some meat on the bone in this department due to the old machine that I was working on.
+<br><br>While model accuracy was important, my main goal was to learn by doing, and I accomplished that. Through data cleaning, feature engineering, and experimenting with model architecture and evaluation, I developed a strong understanding of what contributes to effective forecasting in this space. The full GitHub repo includes a deeper dive into the process, challenges, and takeaways.
+ You can view the full code and deeper analysis in the full <a href="https://github.com/lmutz/SP15-Solar-Gen/blob/main/SP15Proj_Added_Notes.ipynb" target="_blank">GitHub notebook here</a>.</p>
+
+    <a href="projects.html" class="back-to-projects">← Back to All Projects</a>
+  </div>
+
+  <footer>
+    <div class="footer-icons">
+      <a href="mailto:luke.mutz@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/luke-mutz-7290592a8" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/lmutz/SP15-Solar-Gen/blob/main/SP15Proj_Added_Notes.ipynb" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+    <p>© 2025 Luke Mutz. All rights reserved.</p>
+  </footer>
+</body>
+</html>
