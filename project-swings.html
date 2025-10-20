@@ -75,7 +75,7 @@
       margin-top: 0.5rem;
     }
     .container {
-      max-width: 800px;
+      max-width: 1000px;  /* CHANGED FROM 800px - Change this value to make container wider/narrower */
       margin: auto;
       padding: 2rem;
       background: #ffffff;
@@ -89,6 +89,23 @@
       font-weight: 600;
       margin-bottom: 2rem;
       color: #1f1f1f;
+    }
+    .header-image-container {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .header-img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .header-img-caption {
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: 0.5rem;
+      font-style: italic;
     }
     .section-header {
       font-size: 1.25rem;
@@ -198,10 +215,16 @@
 
     <p class="project-main-title">Nick Castellanos Swing Decision Investigation</p>
 
-    <p>Living in the Philadelphia market and being someone who consumes a good amount of Phillies baseball and local sports media, I’ve 
-      heard plenty of discussion about Nick Castellanos’s underwhelming offensive performance during the 2025 season. Following the 
-      Phillies’ early exit from the postseason, I wanted to take a closer look at the data to see whether some of the flaws I’ve noticed 
-      in Castellanos’s game are backed by the numbers. Using pitch-level data spanning his entire career, I set out to examine not 
+    <!-- Header Image -->
+    <div class="header-image-container">
+      <img src="strike3.jpg" alt="Strike analysis" class="header-img">
+      <div class="header-img-caption">Add your caption text here</div>
+    </div>
+
+    <p>Living in the Philadelphia market and being someone who consumes a good amount of Phillies baseball and local sports media, I've 
+      heard plenty of discussion about Nick Castellanos's underwhelming offensive performance during the 2025 season. Following the 
+      Phillies' early exit from the postseason, I wanted to take a closer look at the data to see whether some of the flaws I've noticed 
+      in Castellanos's game are backed by the numbers. Using pitch-level data spanning his entire career, I set out to examine not 
       only whether those weaknesses were evident this year, but also how these aspects of his game have evolved over time.</p>
 
     <p class="section-header">Introduction & Motivation</p>
