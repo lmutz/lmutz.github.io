@@ -66,21 +66,27 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 2rem;
+      gap: 3rem;
       margin-bottom: 3rem;
+      max-width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 2rem;
     }
     .intro-image {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
+      width: 250px;
+      height: 250px;
+      object-fit: contain;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      flex-shrink: 0;
     }
     .intro-text {
       text-align: center;
-      max-width: 700px;
+      max-width: 600px;
       color: #3f4a5a;
       font-size: 1.05rem;
+      flex-shrink: 1;
     }
     .projects-grid {
       display: grid;
@@ -175,10 +181,13 @@
       opacity: 0.8;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1200px) {
       .intro-image {
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
+      }
+      .intro-section {
+        gap: 2rem;
       }
     }
 
@@ -188,10 +197,11 @@
       }
       .intro-section {
         flex-direction: column;
+        gap: 1.5rem;
       }
       .intro-image {
-        width: 180px;
-        height: 180px;
+        width: 220px;
+        height: 220px;
       }
     }
   </style>
@@ -207,15 +217,15 @@
 
   <div class="page-title">📊 Projects</div>
 
-  <div class="container">
-    <div class="intro-section">
-      <img src="errormodels.jpg" alt="Project visualization" class="intro-image">
-      <div class="intro-text">
-        <p>Welcome to my projects portfolio! Here you'll find detailed write-ups of personal projects where I explore new domains, refine my technical skills, and apply data science & ML methodologies to real-world challenges.</p>
-      </div>
-      <img src="AUCTooGood.jpg" alt="Project visualization" class="intro-image">
+  <div class="intro-section">
+    <img src="errormodels.jpg" alt="Project visualization" class="intro-image">
+    <div class="intro-text">
+      <p>Welcome to my projects portfolio! Here you'll find detailed write-ups of personal projects where I explore new domains, refine my technical skills, and apply data science & ML methodologies to real-world challenges.</p>
     </div>
+    <img src="AUCTooGood.jpg" alt="Project visualization" class="intro-image">
+  </div>
 
+  <div class="container">
     <div class="projects-grid">
       <!-- Project 1: Solar Energy Forecasting -->
       <a href="project-solar.html" class="project-card">
