@@ -264,54 +264,79 @@
 
     <p class="section-header">Phase 1: Problem identification and preliminary swing decision analysis</p>
     
-    <p>Write your introductory paragraph here about why problem identification is needed and what exactly you're looking for in this phase.</p>
+    <p>You can't solve a problem that doesn't exist, and while most people wouldn't need to see the numbers to tell you that 
+      Nick Castellanos struggles laying off the low and away breaking ball, I wanted to see just how bad this issue really was. 
+      Below I present a mix of visuals that show some of Castellanos's swing tendencies for various pitches in and around the 
+      strike zone.</p>
 
     <!-- Phase 1: First set of side-by-side images -->
     <div class="image-row">
       <div class="image-column">
-        <img class="side-by-side-img" src="your-phase1-image-1.jpg" alt="Description of Image 1">
-        <div class="project-img-caption">Caption for your first image explaining what it shows.</div>
+        <img class="side-by-side-img" src="NCSwingRateBBs2.jpg" alt="Description of Image 1">
+        <div class="project-img-caption">Nick Castellanos swing rate broken down by areas in and around the strike zone for 2025 breaking balls.</div>
       </div>
       <div class="image-column">
-        <img class="side-by-side-img" src="your-phase1-image-2.jpg" alt="Description of Image 2">
-        <div class="project-img-caption">Caption for your second image explaining what it shows.</div>
+        <img class="side-by-side-img" src="NCWhiffRateBBs.jpg" alt="Description of Image 2">
+        <div class="project-img-caption">Nick Castellanos whiff rate broken down by areas in and around the strike zone for 2025 breaking balls.</div>
       </div>
     </div>
 
-    <p>Paragraph explaining what those visuals demonstrate and what insights you can draw from them.</p>
+    <p>Looking at the above visuals for the 2025 season, a few things become very clear. First, Nick Castellanos swung at the low 
+      and away breaking ball at a fairly high clip (44.6% of the time). Although I didn't have the time or space to download data 
+      for every player in the MLB, I did take a look at a few different players, and we can be assured that this is an above-average 
+      value. Secondly, Castellanos sees this pitch a lot! With n = 392, Castellanos saw breaking balls in this zone 2.76x as often 
+      as the next most frequent zone (zone 13). Finally, what happens when Castellanos swings at this pitch? If the outcome of these 
+      swing decisions is positive, this would not be a problem. However, the second image tells us that castellanos whiffed at over 
+      half of these pitches that he swung at.</p>
 
     <!-- Phase 1: Full-width image -->
     <div class="image-column">
-      <img class="full-width-img" src="your-phase1-full-width.jpg" alt="Full width visualization">
-      <div class="project-img-caption">Caption for your full-width image.</div>
+      <img class="full-width-img" src="NCSwingRateBBsCareer2.jpg" alt="Full width visualization">
+      <div class="project-img-caption">Career progression of Nick Castellanos's swing decisions on breaking balls broken down by segments of the strike zone.</div>
     </div>
 
-    <p>Text explaining the full-width image and its significance to your analysis.</p>
+    <p>The above image details Nick Castellanos's swing decision tendencies on breaking balls over the course of his entire career. 
+      As you can see, he hasn't improved at all! Interestingly, the year that he has the lowest chase rate (min n = 300) was also 
+      the only year of his career that he hit over .300. This was also the year that he had the most homeruns and highest OPS. More 
+      discipline typically helps you in more ways than one!</p>
 
     <!-- Phase 1: Second set of side-by-side images -->
     <div class="image-row">
       <div class="image-column">
-        <img class="side-by-side-img" src="your-phase1-image-3.jpg" alt="Description of Image 3">
-        <div class="project-img-caption">Caption for your third image explaining what it shows.</div>
+        <img class="side-by-side-img" src="TTYoY.jpg" alt="Description of Image 3">
+        <div class="project-img-caption">Trea Turner swing tendencies on zone 14 breaking balls in 2024 and 2025.</div>
       </div>
       <div class="image-column">
-        <img class="side-by-side-img" src="your-phase1-image-4.jpg" alt="Description of Image 4">
-        <div class="project-img-caption">Caption for your fourth image explaining what it shows.</div>
+        <img class="side-by-side-img" src="CastyYoY.jpg" alt="Description of Image 4">
+        <div class="project-img-caption">Nick Castellanos swing tendencies on zone 14 breaking balls in 2024 and 2025.</div>
       </div>
     </div>
 
-    <p>Concluding paragraph for Phase 1 that wraps up the problem identification and preliminary analysis findings.</p>
+    <p>Trea Turner is a great player to look at as a comparison because he also tends to chase the zone 14 breaking ball frequently 
+      and sees this pitch thrown his way quite a bit. However, Turner was much more disceplined on that pitch this season relative 
+      to last season. I'd think this discipline was likely a contributing factor in Turner winning the batting title for the NL. I 
+      bring this example up as a demonstration of a player who made an adjustment to a similar flaw and saw success as a (likely 
+      direct) result. While I don't have internal knowledge on how Trea's approach changed between last year and this year, the data 
+      seems to suggest he placed an emphasis on laying off the low and away slider. Turner's 9 point increase in average was 
+      accompanied by 17 more stolen bags, a 17 point jump in OBP, and more doubles and triples than he had last year, but fewer 
+      home runs as well.</p>
 
     <p class="section-header">Phase 2: Predictive modeling</p>
     
     <!-- Copy your first existing paragraph here (with em dash removed) -->
-    <p>Your first paragraph about Phase 2 goes here.</p>
+    <p>While the heatmaps in Phase 1 clearly identified what the problem is (zone 14 breaking ball chases), they don't tell us why 
+      these specific pitches are so exploitable. To dig deeper, I built two predictive models—not for real-time game use, but as 
+      analytical tools to uncover the underlying patterns and drivers of chase behavior.</p>
 
     <!-- Copy your second existing paragraph here -->
-    <p>Your second paragraph about Phase 2 goes here.</p>
+    <p>The Goal: Use machine learning to identify which pitch characteristics, count situations, and sequence patterns most 
+      strongly predict chase decisions. This moves beyond simple observation to quantitative validation: confirming that the 
+      breaking ball + location interaction isn't just correlation, but a consistently predictive pattern.</p>
 
     <!-- Copy your third existing paragraph here -->
-    <p>Your third paragraph about Phase 2 goes here.</p>
+    <p>Below, I'll present key findings from a Random Forest model and an LSTM sequence model. While the LSTM's performance was 
+      limited (demonstrating that pitch-by-pitch prediction faces inherent uncertainty), both models provided valuable intelligence 
+      on what makes certain pitches particularly dangerous and helped quantify the severity of Castellanos' vulnerability.</p>
 
     <p class="sub-sub-header">Random Forest</p>
     <p>Introductory paragraph about the Random Forest model approach and methodology.</p>
