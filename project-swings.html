@@ -264,131 +264,111 @@
 
     <p class="section-header">Phase 1: Problem identification and preliminary swing decision analysis</p>
     
-    <p>You can't solve a problem that doesn't exist, and while most people wouldn't need to see the numbers to tell you that Nick Castellanos 
-    struggles laying off the low and away breaking ball, I wanted to see just how bad this issue really was. Below I present a mix of visuals 
-    that show some of Castellanos's swing tendencies for various pitches in and around the strike zone.</p>
+    <p>Write your introductory paragraph here about why problem identification is needed and what exactly you're looking for in this phase.</p>
 
     <!-- Phase 1: First set of side-by-side images -->
     <div class="image-row">
       <div class="image-column">
-        <img class="side-by-side-img" src="NCSwingRateBBs2.jpg" alt="Nick Castellanos swing rate on breaking balls 2025">
-        <div class="project-img-caption">Nick Castellanos swing rate broken down by areas in and around the strike zone for 2025 breaking balls.</div>
+        <img class="side-by-side-img" src="your-phase1-image-1.jpg" alt="Description of Image 1">
+        <div class="project-img-caption">Caption for your first image explaining what it shows.</div>
       </div>
       <div class="image-column">
-        <img class="side-by-side-img" src="NCWhiffRateBBs.jpg" alt="Nick Castellanos whiff rate on breaking balls 2025">
-        <div class="project-img-caption">Nick Castellanos whiff rate broken down by areas in and around the strike zone for 2025 breaking balls.</div>
+        <img class="side-by-side-img" src="your-phase1-image-2.jpg" alt="Description of Image 2">
+        <div class="project-img-caption">Caption for your second image explaining what it shows.</div>
       </div>
     </div>
 
-    <p>Looking at the above visuals for the 2025 season, a few things become very clear. First, Nick Castellanos swung at the low and away 
-    breaking ball at a fairly high clip (44.6% of the time). Although I didn't have the time or space to download data for every player in the 
-    MLB, I did take a look at a few different players, and we can be assured that this is an above-average value. Secondly, Castellanos sees 
-    this pitch a lot! With n = 392, Castellanos saw breaking balls in this zone 2.76x as often as the next most frequent zone (zone 13). 
-    Finally, what happens when Castellanos swings at this pitch? If the outcome of these swing decisions is positive, this would not be a 
-    problem. However, the second image tells us that castellanos whiffed at over half of these pitches that he swung at. </p>
+    <p>Paragraph explaining what those visuals demonstrate and what insights you can draw from them.</p>
 
     <!-- Phase 1: Full-width image -->
     <div class="image-column">
-      <img class="full-width-img" src="NCSwingRateBBsCareer2.jpg" alt="Nick Castellanos swing decision career progression">
-      <div class="project-img-caption">Career progression of Nick Castellanos's swing decisions on breaking balls broken down by 
-      segments of the strike zone.</div>
+      <img class="full-width-img" src="your-phase1-full-width.jpg" alt="Full width visualization">
+      <div class="project-img-caption">Caption for your full-width image.</div>
     </div>
 
-    <p>The above image details Nick Castellanos's swing decision tendencies on breaking balls over the course of his entire career. 
-    As you can see, he hasn't improved at all! Interestingly, the year that he has the lowest chase rate (min n = 300) was also the 
-    only year of his career that he hit over .300. This was also the year that he had the most homeruns and highest OPS. More discipline 
-    typically helps you in more ways than one!</p>
+    <p>Text explaining the full-width image and its significance to your analysis.</p>
 
     <!-- Phase 1: Second set of side-by-side images -->
     <div class="image-row">
       <div class="image-column">
-        <img class="side-by-side-img" src="TTYoY.jpg" alt="Trea Turner swing decision changes on zone 14 breakers">
-        <div class="project-img-caption">Trea Turner swing tendencies on zone 14 breaking balls in 2024 and 2025.</div>
+        <img class="side-by-side-img" src="your-phase1-image-3.jpg" alt="Description of Image 3">
+        <div class="project-img-caption">Caption for your third image explaining what it shows.</div>
       </div>
       <div class="image-column">
-        <img class="side-by-side-img" src="CastyYoY.jpg" alt="Castellanos YoY swing decision changes on zone 14 breakers">
-        <div class="project-img-caption">Nick Castellanos swing tendencies on zone 14 breaking balls in 2024 and 2025.</div>
+        <img class="side-by-side-img" src="your-phase1-image-4.jpg" alt="Description of Image 4">
+        <div class="project-img-caption">Caption for your fourth image explaining what it shows.</div>
       </div>
     </div>
 
-    <p>Trea Turner is a great player to look at as a comparison because he also tends to chase the zone 14 breaking ball frequently 
-      and sees this pitch thrown his way quite a bit. However, Turner was much more disceplined on that pitch this season relative 
-      to last season. I'd think this discipline was likely a contributing factor in Turner winning the batting title for the NL. I 
-      bring this example up as a demonstration of a player who made an adjustment to a similar flaw and saw success as a (likely 
-      direct) result. While I don't have internal knowledge on how Trea's approach changed between last year and this year, the data 
-      seems to suggest he placed an emphasis on laying off the low and away slider. Turner's 9 point increase in average was 
-      accompanied by 17 more stolen bags, a 17 point jump in OBP, and more doubles and triples than he had last year, but fewer 
-      homeruns as well.</p>
+    <p>Concluding paragraph for Phase 1 that wraps up the problem identification and preliminary analysis findings.</p>
 
     <p class="section-header">Phase 2: Predictive modeling</p>
-    <p>While the heatmaps in Phase 1 clearly identified what the problem is (zone 14 breaking ball chases), they don't tell us why 
-      these specific pitches are so exploitable. To dig deeper, I built two predictive models—not for real-time game use, but as 
-      analytical tools to uncover the underlying patterns and drivers of chase behavior.
-      
-      The Goal: Use machine learning to identify which pitch characteristics, count situations, and sequence patterns most strongly 
-      predict chase decisions. This moves beyond simple observation to quantitative validation: confirming that the breaking ball + 
-      location interaction isn't just correlation, but a consistently predictive pattern.
-      
-      Below, I'll present key findings from a Random Forest model and an LSTM sequence model. While the LSTM's performance was 
-      limited (demonstrating that pitch-by-pitch prediction faces inherent uncertainty), both models provided valuable intelligence 
-      on what makes certain pitches particularly dangerous and helped quantify the severity of Castellanos' vulnerability.</p>
-
-    <p class="section-header">Data Handling & EDA</p>
-    <p class="sub-sub-header">Data Handling</p>
-    <p>Describe your data cleaning and preparation process. What challenges did you face? How did you merge different data sources? What decisions did you make about handling missing values, outliers, or other data quality issues?</p>
-    <p>Include details about any technical challenges you overcame, such as API limitations, timestamp conversions, data formatting issues, or filtering decisions that improved your model's performance.</p>
-
-    <p class="sub-sub-header">EDA</p>
-    <p>Provide an overview of your exploratory data analysis. What patterns did you discover? What insights guided your modeling decisions?</p>
     
-    <!-- Example: Side-by-side EDA visualizations -->
+    <!-- Copy your first existing paragraph here (with em dash removed) -->
+    <p>Your first paragraph about Phase 2 goes here.</p>
+
+    <!-- Copy your second existing paragraph here -->
+    <p>Your second paragraph about Phase 2 goes here.</p>
+
+    <!-- Copy your third existing paragraph here -->
+    <p>Your third paragraph about Phase 2 goes here.</p>
+
+    <p class="sub-sub-header">Random Forest</p>
+    <p>Introductory paragraph about the Random Forest model approach and methodology.</p>
+
+    <!-- Random Forest: Side-by-side images -->
     <div class="image-row">
       <div class="image-column">
-        <img class="side-by-side-img" src="eda-plot-1.jpg" alt="EDA Visualization 1">
-        <div class="project-img-caption">Description of what this visualization reveals about your data.</div>
+        <img class="side-by-side-img" src="rf-image-1.jpg" alt="Random Forest visualization 1">
+        <div class="project-img-caption">Caption for your first Random Forest output image.</div>
       </div>
       <div class="image-column">
-        <img class="side-by-side-img" src="eda-plot-2.jpg" alt="EDA Visualization 2">
-        <div class="project-img-caption">Description of what this visualization reveals about your data.</div>
-      </div>
-    </div>
-    
-    <p>Continue discussing your EDA findings. What relationships did you find between variables? Were there any surprising discoveries or patterns that influenced your approach?</p>
-
-    <p class="section-header">Feature Engineering & Modeling</p>
-
-    <p class="sub-sub-header">Feature Engineering and Selection</p>
-    <p>Describe your feature engineering process. What features did you create? How did you select which features to include in your model? Did you use correlation analysis, feature importance, or other methods to refine your feature set?</p>
-
-    <!-- Example: Feature-related visualizations -->
-    <div class="image-row">
-      <div class="image-column">
-        <img class="side-by-side-img" src="feature-plot-1.jpg" alt="Feature Analysis">
-        <div class="project-img-caption">Description of feature relationships or importance.</div>
-      </div>
-      <div class="image-column">
-        <img class="side-by-side-img" src="feature-plot-2.jpg" alt="Feature Engineering">
-        <div class="project-img-caption">Description of engineered features or transformations.</div>
+        <img class="side-by-side-img" src="rf-image-2.jpg" alt="Random Forest visualization 2">
+        <div class="project-img-caption">Caption for your second Random Forest output image.</div>
       </div>
     </div>
 
-    <p>Explain any advanced feature engineering techniques you applied and why they were beneficial for your specific problem.</p>
+    <p>Paragraph describing the Random Forest model outputs and what they reveal about Castellanos's swing decisions.</p>
 
-    <p class="sub-sub-header">Model Building</p>
-    <p>Describe your modeling approach. What algorithms did you use and why? How did you evaluate model performance? What metrics were most important for your use case?</p>
-  
-    <p>Discuss your model tuning process, cross-validation strategy, and how you prevented overfitting. Share your results and how they compare to any benchmarks or baseline models.</p>
+    <p class="sub-sub-header">LSTM</p>
+    <p>Introductory paragraph about the LSTM model approach and methodology.</p>
 
-    <!-- Example: Full-width results visualization -->
+    <!-- LSTM: Side-by-side images -->
+    <div class="image-row">
+      <div class="image-column">
+        <img class="side-by-side-img" src="lstm-image-1.jpg" alt="LSTM visualization 1">
+        <div class="project-img-caption">Caption for your first LSTM output image.</div>
+      </div>
+      <div class="image-column">
+        <img class="side-by-side-img" src="lstm-image-2.jpg" alt="LSTM visualization 2">
+        <div class="project-img-caption">Caption for your second LSTM output image.</div>
+      </div>
+    </div>
+
+    <p>Paragraph describing the LSTM model outputs and what they reveal about Castellanos's swing decisions.</p>
+
+    <p class="section-header">Phase 3: Sequence analysis and improvement strategies</p>
+
+    <p>Introductory paragraph for Phase 3 explaining the sequence analysis approach.</p>
+
+    <!-- Phase 3: First full-width image -->
     <div class="image-column">
-      <img class="full-width-img" src="results-plot.jpg" alt="Model Results">
-      <div class="project-img-caption">Description of your model's performance or predictions.</div>
+      <img class="full-width-img" src="phase3-image-1.jpg" alt="Sequence analysis visualization 1">
+      <div class="project-img-caption">Caption for your first Phase 3 image.</div>
     </div>
 
-    <p>Analyze your results in detail. What worked well? Were there any unexpected findings or areas where the model struggled?</p>
+    <p>Paragraph explaining what the first image shows about pitch sequences and patterns.</p>
+
+    <!-- Phase 3: Second full-width image -->
+    <div class="image-column">
+      <img class="full-width-img" src="phase3-image-2.jpg" alt="Sequence analysis visualization 2">
+      <div class="project-img-caption">Caption for your second Phase 3 image.</div>
+    </div>
+
+    <p>Paragraph explaining what the second image shows and your improvement strategies.</p>
 
     <p class="section-header">Conclusion</p>
-    <p>Summarize what you learned from this project. What skills did you develop? What insights did you gain? How did you achieve your project goals?</p>
+    <p>Summarize what you learned from this project. What skills did you develop? What insights did you gain about Castellanos's swing decisions?</p>
     <p>Reflect on the challenges you faced and how you overcame them. What would you do differently next time? What are potential next steps or extensions of this work?</p>
     <p>Include a link to your full GitHub repository: You can view the full code and deeper analysis in the <a href="https://github.com/yourusername/your-repo" target="_blank">GitHub repository here</a>.</p>
 
